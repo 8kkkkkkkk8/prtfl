@@ -1,26 +1,17 @@
-/* Základní nastavení celé stránky */
-body {
+/* --- Základní nastavení stránky --- */
+html, body {
+    height: 100%; /* Vyplní celou výšku okna */
+    margin: 0;
+    padding: 0;
     background-color: #ffffff; /* Komplet bílé pozadí */
     color: #000000; /* Černý text */
-    font-family: "Times New Roman", Times, serif; /* Vynucení fontu Times New Roman */
+    font-family: "Times New Roman", Times, serif; /* Vynucení fontu */
     font-size: 18px;
-    line-height: 1.6;
-    
-    /* Věci pro vycentrování */
-    max-width: 700px; /* Maximální šířka obsahu (můžete upravit podle chuti) */
-    margin: 60px auto; /* Vycentrování na střed (auto vlevo a vpravo) */
-    padding: 0 20px; /* Odsazení od okrajů na mobilech */
-}
-
-/* Nastavení nadpisů, aby dědily správný font i barvu */
-h1, h2, h3, p {
-    font-family: "Times New Roman", Times, serif;
-    color: #000000;
 }
 
 /* Odkazy (hyperlinky) */
 a {
-    color: #0000ff; /* Modrá barva odkazu */
+    color: #0000ff; /* Modrá */
     text-decoration: none; 
 }
 
@@ -28,5 +19,86 @@ a {
 a:hover {
     color: #0000ff; 
     text-decoration: line-through; /* Přeškrtnutí */
-    text-decoration-color: #ff00ff; /* Magenta barva přeškrtnutí */
+    text-decoration-color: #ff00ff; /* Magenta */
+}
+
+/* Odstranění odrážek v menu */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Nastavení Trojúhelníkové Grid Mřížky --- */
+
+.triangle-grid {
+    display: grid;
+    /* Definujeme mřížku: 3 sloupce, 3 řádky */
+    grid-template-columns: 1fr 1fr 1fr; /* Tři stejně široké sloupce */
+    grid-template-rows: 1fr 1fr 1fr; /* Tři stejně vysoké řádky */
+    
+    /* Vycentrování mřížky doprostřed stránky */
+    height: 80vh; /* 80% výšky viewportu */
+    max-width: 800px; /* Maximální šířka celého bloku */
+    margin: 10vh auto; /* 10vh odsazení shora, zbytek auto na střed */
+    
+    /* Pro vizualizaci (můžete smazat, až to bude fungovat) */
+    /* border: 1px solid #ccc; */
+}
+
+/* Společné vlastnosti pro všechny sekce */
+.grid-item {
+    display: flex;
+    justify-content: center; /* Zarovnání obsahu na střed sloupce */
+    align-items: center; /* Zarovnání obsahu na střed řádku */
+    padding: 20px;
+    /* border: 1px dotted #eee; */ /* Pomáhá vidět, kde co je */
+}
+
+
+/* --- Umístění prvků do trojúhelníku --- */
+
+/* 1. Nadpis (header) - jde doprostřed prvního řádku */
+.header {
+    grid-row: 1; /* První řádek */
+    grid-column: 2; /* Druhý sloupec (z celkem tří) - tím se dostane doprostřed */
+}
+
+.header h1 {
+    font-size: 3em; /* Větší nadpis */
+    margin: 0;
+}
+
+
+/* 2. Menu (nav) - jde do třetího řádku, prvního sloupce */
+.menu {
+    grid-row: 3; /* Třetí řádek */
+    grid-column: 1; /* První sloupec */
+    justify-content: flex-start; /* Zarovnání doleva v rámci buňky */
+    align-items: flex-end; /* Zarovnání dolů v rámci buňky */
+}
+
+.menu ul {
+    text-align: left;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+
+/* 3. Fotka (photo) - jde do třetího řádku, třetího sloupce */
+.photo {
+    grid-row: 3; /* Třetí řádek */
+    grid-column: 3; /* Třetí sloupec */
+    justify-content: flex-end; /* Zarovnání doprava v rámci buňky */
+    align-items: flex-end; /* Zarovnání dolů v rámci buňky */
+}
+
+/* Placeholder pro vaši budoucí fotku */
+.photo-placeholder {
+    width: 150px;  /* Velikost placeholderu */
+    height: 150px; /* Velikost placeholderu */
+    background-color: #eee; /* Šedý čtverec místo fotky */
+    border: 1px solid #999;
 }
