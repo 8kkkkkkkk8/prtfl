@@ -61,7 +61,7 @@ nav ul {
     font-size: 2.2em;
     margin: 0;
     letter-spacing: 2px;
-    color: #0000ff; /* Změněno na stejnou modrou barvu jako hyperlink */
+    color: #0000ff; /* Stejná modrá jako hyperlink */
 }
 
 
@@ -84,10 +84,10 @@ nav ul {
     justify-content: flex-end;
 }
 
-/* Placeholder pro fotku */
-.photo-placeholder {
-    width: 120px;  
-    height: 120px; 
-    background-color: #eee; 
-    border: 1px solid #999;
+/* Styl pro reálnou fotku */
+.moje-fotka {
+    width: 120px;  /* Šířka fotky (můžete libovolně zvětšit/zmenšit) */
+    height: 120px; /* Výška fotky */
+    object-fit: cover; /* Ořízne fotku do čtverce, aby se nedeformovala */
+    border: 1px solid #999; /* Volitelný jemný rámeček */
 }
