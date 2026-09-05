@@ -3,9 +3,13 @@ body {
     background-color: #ffffff; /* Komplet bílé pozadí */
     color: #000000; /* Černý text */
     font-family: "Times New Roman", Times, serif; /* Vynucení fontu Times New Roman */
-    margin: 40px;
     font-size: 18px;
     line-height: 1.6;
+    
+    /* Věci pro vycentrování */
+    max-width: 700px; /* Maximální šířka obsahu (můžete upravit podle chuti) */
+    margin: 60px auto; /* Vycentrování na střed (auto vlevo a vpravo) */
+    padding: 0 20px; /* Odsazení od okrajů na mobilech */
 }
 
 /* Nastavení nadpisů, aby dědily správný font i barvu */
@@ -17,12 +21,12 @@ h1, h2, h3, p {
 /* Odkazy (hyperlinky) */
 a {
     color: #0000ff; /* Modrá barva odkazu */
-    text-decoration: none; /* Výchozí podtržení (můžete nechat nebo zrušit) */
+    text-decoration: none; 
 }
 
 /* Efekt při najetí myši (hover) */
 a:hover {
-    color: #0000ff; /* Barva při najetí zůstává modrá (nebo můžete změnit) */
+    color: #0000ff; 
     text-decoration: line-through; /* Přeškrtnutí */
     text-decoration-color: #ff00ff; /* Magenta barva přeškrtnutí */
 }
