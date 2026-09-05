@@ -223,3 +223,34 @@ body.locked-page {
 body {
     animation: fadeIn 0.4s ease-in-out;
 }
+
+/* --- Styly pro dvousloupcové Bio --- */
+.bio-grid {
+    display: grid;
+    grid-template-columns: 1fr auto; /* Levý sloupec pro text (roztáhne se), pravý pro fotku */
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+    max-width: 750px;
+    text-align: left; /* Text v levém sloupci bude zarovnaný doleva */
+}
+
+.bio-text h2 {
+    font-size: 1.2em;
+    font-weight: normal;
+    margin: 0 0 20px 0;
+    letter-spacing: 1px;
+}
+
+.bio-text p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Fotka v biu */
+.bio-photo {
+    width: 100%;
+    max-width: 200px; /* Můžeš si upravit velikost fotky podle chuti */
+    height: auto;
+    display: block;
+}
