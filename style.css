@@ -124,3 +124,56 @@ nav ul {
     border: none;      
     background: none;  
 }
+
+/* --- Styly pro podstránky (bio, contact, portfolio) --- */
+
+.subpage-container {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Všechno zarovná na střed */
+}
+
+/* Nadpis na podstránkách */
+.subpage-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.subpage-header h1 {
+    font-size: 2.2em;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+/* Menu pod nadpisem na podstránkách */
+.subpage-menu {
+    margin-bottom: 50px;
+}
+
+.subpage-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px; /* Vodorovné mezery mezi položkami v menu (můžeš změnit na pod sebe, pokud chceš) */
+    justify-content: center;
+}
+
+/* Prostor pro obsah podstránek */
+.subpage-content {
+    width: 100%;
+    text-align: center;
+}
+
+/* Třída pro povolení scrollování (použije se u portfolia) */
+body.scrollable-page {
+    overflow: auto !important; /* Přepíše zamknuté scrollování z hlavní stránky */
+    height: auto !important;
+    min-height: 100vh;
+    display: block !important; /* Zruší flexbox vycentrování celého těla, aby stránka mohla růst dolů */
+}
