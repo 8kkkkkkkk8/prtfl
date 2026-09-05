@@ -84,10 +84,12 @@ nav ul {
     justify-content: flex-end;
 }
 
-/* Styl pro reálnou fotku */
+/* Styl pro reálnou fotku v originální velikosti / s možností změny v % */
 .moje-fotka {
-    width: 120px;  /* Šířka fotky (můžete libovolně zvětšit/zmenšit) */
-    height: 120px; /* Výška fotky */
-    object-fit: cover; /* Ořízne fotku do čtverce, aby se nedeformovala */
-    border: 1px solid #999; /* Volitelný jemný rámeček */
+    width: 100%;       /* Můžete změnit na kolik % chcete (např. 50% pro poloviční velikost) */
+    max-width: 250px;  /* Zde si omezíte maximální velikost, aby nebyla moc obří */
+    height: auto;      /* Automaticky zachová správný poměr stran, žádné ořezávání */
+    display: block;    /* Odstraní nežádoucí mezery kolem obrázku */
+    border: none;      /* Žádný rámeček */
+    background: none;  /* Žádný podkladový box */
 }
