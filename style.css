@@ -17,7 +17,7 @@ html, body {
     color: #000000;
     font-family: "Times New Roman", Times, serif;
     font-size: 18px;
-    overflow: auto; /* Výchozí scrollování zapnuté (pro portfolio) */
+    overflow: auto;
 }
 
 
@@ -54,7 +54,7 @@ nav ul, .subpage-menu ul {
 
 
 /* ==========================================================
-   3. HLAVNÍ STRÁNKA (Pevná na 1 obrazovku, vycentrovaná)
+   3. HLAVNÍ STRÁNKA (Nadpis nahoře, menu vlevo, fotka vpravo)
    ================================================---------- */
 body.home-page {
     overflow: hidden !important;
@@ -66,14 +66,11 @@ body.home-page {
 
 .triangle-grid {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     grid-template-rows: auto auto;
     width: 100%;
-    max-width: 600px; /* Širší prostor pro větší fotku */
-    
-    /* Vodorovná a svislá mezera mezi prvky mřížky */
-    gap: 50px 100px; 
-    
+    max-width: 750px; 
+    gap: 40px 120px; 
     box-sizing: border-box;
     padding: 20px;
     align-items: center; 
@@ -81,9 +78,10 @@ body.home-page {
 
 .header {
     grid-row: 1;
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 2;
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 .header h1 {
@@ -114,7 +112,7 @@ body.home-page {
 
 .photo {
     grid-row: 2;
-    grid-column: 3;
+    grid-column: 2;
     display: flex;
     justify-content: flex-end;
     align-self: center;
@@ -122,7 +120,7 @@ body.home-page {
 
 .moje-fotka {
     width: 100%;       
-    max-width: 320px;  /* Zvětšená fotka na hlavní stránce */
+    max-width: 320px;  
     height: auto;      
     display: block;    
     border: none;      
@@ -172,7 +170,7 @@ body.home-page {
 
 
 /* ==========================================================
-   5. PODSTRÁNKY - BIO & CONTACT (Zamčené na 1 obrazovku, obsah uprostřed)
+   5. PODSTRÁNKY - BIO & CONTACT (Zamčené na 1 obrazovku)
    ================================================---------- */
 body.locked-page {
     overflow: hidden !important;
@@ -192,7 +190,6 @@ body.locked-page {
     align-items: center;
 }
 
-/* Horní část (nadpis + menu) pro bio/contact */
 .locked-top {
     display: flex;
     flex-direction: column;
@@ -200,39 +197,36 @@ body.locked-page {
     width: 100%;
 }
 
-/* Střední obsahová část pro bio/contact - dokonale uprostřed obrazovky */
 .locked-content {
     width: 100%;
     text-align: center;
     margin: auto 0;
 }
 
+
 /* ==========================================================
-   Plynulý přechod (blend / fade-in) při načtení stránky
+   6. SPECIFICKÉ KOMPONENTY (Bio, Contact, Animace)
    ================================================---------- */
+
+/* Plynulý přechod (fade-in) při načtení stránky */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Aplikování animace na celou stránku při každém otevření/prokliknutí */
 body {
     animation: fadeIn 0.4s ease-in-out;
 }
 
-/* --- Styly pro dvousloupcové Bio --- */
+/* Dvousloupcové Bio */
 .bio-grid {
     display: grid;
-    grid-template-columns: 1fr auto; /* Levý sloupec pro text (roztáhne se), pravý pro fotku */
+    grid-template-columns: 1fr auto;
     gap: 60px;
     align-items: center;
     width: 100%;
     max-width: 750px;
-    text-align: left; /* Text v levém sloupci bude zarovnaný doleva */
+    text-align: left;
 }
 
 .bio-text h2 {
@@ -243,30 +237,24 @@ body {
 }
 
 .bio-text p {
+    font-size: 0.9em;
+    line-height: 1.5;
     margin: 0;
-    line-height: 1.6;
 }
 
-/* Fotka v biu */
 .bio-photo {
     width: 100%;
-    max-width: 320px; /* Můžeš si upravit velikost fotky podle chuti */
+    max-width: 320px;
     height: auto;
     display: block;
 }
 
-/* Zmenšení textu v biu */
-.bio-text p {
-    font-size: 0.9em; /* Můžeš zkusit i menší, např. 0.85em */
-    line-height: 1.5;
-}
-
-/* --- Styly pro stránku Contact --- */
+/* Kontaktní stránka */
 .contact-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Mezera mezi odkazy */
+    gap: 20px;
 }
 
 .contact-link {
