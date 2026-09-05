@@ -1,12 +1,14 @@
-/* --- Základní nastavení stránky --- */
+/* --- Základní nastavení stránky (zamykáme scrollování) --- */
 html, body {
-    height: 100%;
+    width: 100%;
+    height: 100vh; /* Přesně 100 % výšky obrazovky */
     margin: 0;
     padding: 0;
     background-color: #ffffff; /* Komplet bílé pozadí */
     color: #000000; /* Černý text */
     font-family: "Times New Roman", Times, serif;
     font-size: 18px;
+    overflow: hidden; /* ZAMKNE SCROLLOVÁNÍ - žádné posouvání stránky nebude možné */
 }
 
 /* Odkazy (hyperlinky) */
@@ -29,38 +31,40 @@ nav ul {
     margin: 0;
 }
 
-/* --- Trojúhelníková Grid Mřížka --- */
+/* --- Hlavní mřížka přizpůsobená na celou obrazovku --- */
 
 .triangle-grid {
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto;
-    width: fit-content;
-    margin: 25vh auto 0 auto;
-    gap: 60px 100px;
-}
-
-/* Společné vlastnosti pro všechny sekce */
-.grid-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: 1fr auto 1fr; /* Levý sloupec, střed, pravý sloupec */
+    grid-template-rows: 1fr 1fr;         /* Horní řádek a dolní řádek */
+    
+    /* Roztáhne mřížku přesně na celou plochu okna s menšími okraji */
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 6vh 8vw; /* Vnitřní okraje kolem celého obsahu (procento z výšky a šířky monitoru) */
+    
+    /* Využije prostor tak, aby se prvky roztáhly do rohů/středu */
+    justify-content: space-between;
+    align-content: space-between;
 }
 
 
 /* --- Umístění prvků do trojúhelníku --- */
 
-/* 1. Nadpis (header) - nahoře uprostřed */
+/* 1. Nadpis (header) - nahoře přesně uprostřed */
 .header {
     grid-row: 1;
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 3; /* Přes všechny sloupce */
+    display: flex;
     justify-content: center;
+    align-items: flex-start; /* Nahoře */
 }
 
 .header h1 {
-    font-size: 2.2em;
+    font-size: 2.5em;
     margin: 0;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color: #0000ff; /* Stejná modrá jako hyperlink */
 }
 
@@ -69,11 +73,13 @@ nav ul {
 .menu {
     grid-row: 2;
     grid-column: 1;
+    display: flex;
     justify-content: flex-start;
+    align-items: flex-end; /* Dole */
 }
 
 .menu li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 
@@ -81,15 +87,17 @@ nav ul {
 .photo {
     grid-row: 2;
     grid-column: 3;
+    display: flex;
     justify-content: flex-end;
+    align-items: flex-end; /* Dole */
 }
 
-/* Styl pro reálnou fotku v originální velikosti / s možností změny v % */
+/* Čistá fotka bez boxů a rámečků, přizpůsobující se monitoru */
 .moje-fotka {
-    width: 100%;       /* Můžete změnit na kolik % chcete (např. 50% pro poloviční velikost) */
-    max-width: 250px;  /* Zde si omezíte maximální velikost, aby nebyla moc obří */
-    height: auto;      /* Automaticky zachová správný poměr stran, žádné ořezávání */
-    display: block;    /* Odstraní nežádoucí mezery kolem obrázku */
-    border: none;      /* Žádný rámeček */
-    background: none;  /* Žádný podkladový box */
+    width: 100%;       
+    max-width: 180px;  /* Maximální velikost na velkém monitoru (na menším se automaticky zmenší) */
+    height: auto;      
+    display: block;    
+    border: none;      
+    background: none;  
 }
