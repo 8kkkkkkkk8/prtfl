@@ -206,3 +206,20 @@ body.locked-page {
     text-align: center;
     margin: auto 0;
 }
+
+/* ==========================================================
+   Plynulý přechod (blend / fade-in) při načtení stránky
+   ================================================---------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Aplikování animace na celou stránku při každém otevření/prokliknutí */
+body {
+    animation: fadeIn 0.4s ease-in-out;
+}
