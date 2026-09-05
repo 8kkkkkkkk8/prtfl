@@ -25,10 +25,10 @@ html, body {
    2. TYPOGRAFIE, OBRYSY A ODKAZY (globální styly)
    ================================================---------- */
 
-/* Bílý obrys (outline) pro všechna písmena na webu */
+/* Bílý obrys (outline) pro všechna písmena na webu – zvětšeno na 3px */
 body, h1, a, li, 
 .subpage-header h1, .subpage-menu a {
-    -webkit-text-stroke: 1.75px #ffffff;
+    -webkit-text-stroke: 3px #ffffff;
     paint-order: stroke fill;
 }
 
