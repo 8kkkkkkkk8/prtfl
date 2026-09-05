@@ -1,3 +1,57 @@
+/* --- Základní nastavení stránky (zamčené scrollování + modrá mřížka) --- */
+html, body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Čistě bílý základ */
+    
+    /* Jemná mřížka v odstínu modré (používáme RGBA pro jemnou průhlednost, aby nebyla moc křiklavá) */
+    background-image: 
+        linear-gradient(to right, rgba(0, 0, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 255, 0.08) 1px, transparent 1px);
+    background-size: 40px 40px; /* Velikost čtverců mřížky */
+    
+    color: #000000; /* Černý text */
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    overflow: hidden; /* Žádné scrollování */
+    
+    /* Vycentrování celé stránky dokonale doprostřed obrazovky */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Bílý obrys (outline) pro všechen text na stránce --- */
+body, h1, a, li {
+    text-shadow: 
+        -1px -1px 0 #ffffff,  
+         1px -1px 0 #ffffff, 
+        -1px  1px 0 #ffffff,  
+         1px  1px 0 #ffffff; /* Vytvoří 1px bílý obrys kolem každého textu */
+}
+
+/* Odkazy (hyperlinky) */
+a {
+    color: #0000ff; /* Modrá */
+    text-decoration: none; 
+}
+
+/* Efekt při najetí myši (hover) */
+a:hover {
+    color: #0000ff; 
+    text-decoration: line-through; /* Přeškrtnutí */
+    text-decoration-color: #ff00ff; /* Magenta */
+}
+
+/* Odstranění odrážek v menu */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
 /* --- Kompaktní mřížka stažená do středu --- */
 
 .triangle-grid {
@@ -7,12 +61,11 @@
     
     width: 100%;
     max-width: 650px; 
-    gap: 60px 140px; /* Tady můžeš případně upravit svislou mezeru (první číslo) */
+    gap: 60px 140px; 
     
     box-sizing: border-box;
     padding: 20px;
     
-    /* TOTO JE TO KLÍČOVÉ: Zarovná všechny položky v mřížce vertikálně na střed */
     align-items: center; 
 }
 
@@ -31,18 +84,17 @@
     font-size: 2.2em;
     margin: 0;
     letter-spacing: 2px;
-    color: #0000ff;
     text-align: center;
 }
 
 
-/* 2. Menu (nav) - dole vlevo, vertikálně zarovnané s fotkou */
+/* 2. Menu (nav) - dole vlevo */
 .menu {
     grid-row: 2;
     grid-column: 1;
     display: flex;
     justify-content: flex-start;
-    align-self: center; /* Zajišťuje svislý střed */
+    align-self: center;
 }
 
 .menu ul {
@@ -50,10 +102,10 @@
 }
 
 .menu li {
-    margin-bottom: 8px; /* Mezery mezi řádky v menu */
+    margin-bottom: 8px; 
 }
 .menu li:last-child {
-    margin-bottom: 0; /* Zruší zbytečnou mezeru za posledním odkazem, aby byl střed přesnější */
+    margin-bottom: 0; 
 }
 
 
@@ -63,7 +115,7 @@
     grid-column: 3;
     display: flex;
     justify-content: flex-end;
-    align-self: center; /* Zajišťuje svislý střed */
+    align-self: center;
 }
 
 /* Čistá fotka bez boxů a rámečků */
