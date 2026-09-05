@@ -6,7 +6,7 @@ html, body {
     padding: 0;
     background-color: #ffffff; /* Čistě bílý základ */
     
-    /* Výraznější mřížka v odstínu modré (zvedli jsme průhlednost na 0.22, ať je víc vidět) */
+    /* Výraznější mřížka v odstínu modré */
     background-image: 
         linear-gradient(to right, rgba(0, 0, 255, 0.22) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(0, 0, 255, 0.22) 1px, transparent 1px);
@@ -23,9 +23,9 @@ html, body {
     align-items: center;
 }
 
-/* --- Čistý bílý obrys (outline) pouze pro písmo, ne pro přeškrtnutí --- */
+/* --- Výraznější bílý obrys (outline) pouze pro písmo --- */
 body, h1, a, li {
-    -webkit-text-stroke: 1px #ffffff; /* Vytvoří 1px bílý obrys kolem písmen */
+    -webkit-text-stroke: 1.75px #ffffff; /* Zvětšeno z 1px na 1.75px pro silnější outline */
     paint-order: stroke fill;          /* Zajistí správné vykreslení obrysu pod textem */
 }
 
