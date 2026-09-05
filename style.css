@@ -1,11 +1,11 @@
 /* --- Základní nastavení stránky --- */
 html, body {
-    height: 100%; /* Vyplní celou výšku okna */
+    height: 100%;
     margin: 0;
     padding: 0;
     background-color: #ffffff; /* Komplet bílé pozadí */
     color: #000000; /* Černý text */
-    font-family: "Times New Roman", Times, serif; /* Vynucení fontu */
+    font-family: "Times New Roman", Times, serif;
     font-size: 18px;
 }
 
@@ -29,76 +29,66 @@ nav ul {
     margin: 0;
 }
 
-/* --- Nastavení Trojúhelníkové Grid Mřížky --- */
+/* --- Z kompaktněné Trojúhelníkové Grid Mřížky --- */
 
 .triangle-grid {
     display: grid;
-    /* Definujeme mřížku: 3 sloupce, 3 řádky */
-    grid-template-columns: 1fr 1fr 1fr; /* Tři stejně široké sloupce */
-    grid-template-rows: 1fr 1fr 1fr; /* Tři stejně vysoké řádky */
+    grid-template-columns: auto auto auto; /* Sloupce se přizpůsobí obsahu */
+    grid-template-rows: auto auto; /* Jen dva hlavní řádkové bloky nahoru/dolů */
     
-    /* Vycentrování mřížky doprostřed stránky */
-    height: 80vh; /* 80% výšky viewportu */
-    max-width: 800px; /* Maximální šířka celého bloku */
-    margin: 10vh auto; /* 10vh odsazení shora, zbytek auto na střed */
-    
-    /* Pro vizualizaci (můžete smazat, až to bude fungovat) */
-    /* border: 1px solid #ccc; */
+    /* Vycentrování a stažení k sobě */
+    width: fit-content;
+    margin: 25vh auto 0 auto; /* Odsazení shora, zbytek auto na střed */
+    gap: 60px 100px; /* První číslo je mezera svisle, druhé vodorovně mezi sloupci */
 }
 
 /* Společné vlastnosti pro všechny sekce */
 .grid-item {
     display: flex;
-    justify-content: center; /* Zarovnání obsahu na střed sloupce */
-    align-items: center; /* Zarovnání obsahu na střed řádku */
-    padding: 20px;
-    /* border: 1px dotted #eee; */ /* Pomáhá vidět, kde co je */
+    justify-content: center;
+    align-items: center;
 }
 
 
 /* --- Umístění prvků do trojúhelníku --- */
 
-/* 1. Nadpis (header) - jde doprostřed prvního řádku */
+/* 1. Nadpis (header) - nahoře uprostřed */
 .header {
-    grid-row: 1; /* První řádek */
-    grid-column: 2; /* Druhý sloupec (z celkem tří) - tím se dostane doprostřed */
+    grid-row: 1;
+    grid-column: 1 / span 3; /* Roztáhne se přes všechny 3 sloupce, aby byl dokonale uprostřed */
+    justify-content: center;
 }
 
 .header h1 {
-    font-size: 3em; /* Větší nadpis */
+    font-size: 2.2em; /* Mírně menší a elegantnější nadpis */
     margin: 0;
+    letter-spacing: 2px;
 }
 
 
-/* 2. Menu (nav) - jde do třetího řádku, prvního sloupce */
+/* 2. Menu (nav) - dole vlevo */
 .menu {
-    grid-row: 3; /* Třetí řádek */
-    grid-column: 1; /* První sloupec */
-    justify-content: flex-start; /* Zarovnání doleva v rámci buňky */
-    align-items: flex-end; /* Zarovnání dolů v rámci buňky */
-}
-
-.menu ul {
-    text-align: left;
+    grid-row: 2;
+    grid-column: 1;
+    justify-content: flex-start;
 }
 
 .menu li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 
-/* 3. Fotka (photo) - jde do třetího řádku, třetího sloupce */
+/* 3. Fotka (photo) - dole vpravo */
 .photo {
-    grid-row: 3; /* Třetí řádek */
-    grid-column: 3; /* Třetí sloupec */
-    justify-content: flex-end; /* Zarovnání doprava v rámci buňky */
-    align-items: flex-end; /* Zarovnání dolů v rámci buňky */
+    grid-row: 2;
+    grid-column: 3;
+    justify-content: flex-end;
 }
 
-/* Placeholder pro vaši budoucí fotku */
+/* Placeholder pro fotku (můžete zmenšit podle libosti) */
 .photo-placeholder {
-    width: 150px;  /* Velikost placeholderu */
-    height: 150px; /* Velikost placeholderu */
-    background-color: #eee; /* Šedý čtverec místo fotky */
+    width: 120px;  
+    height: 120px; 
+    background-color: #eee; 
     border: 1px solid #999;
 }
