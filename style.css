@@ -122,7 +122,7 @@ body.home-page {
 
 .moje-fotka {
     width: 100%;       
-    max-width: 220px;  /* Zvětšená fotka na hlavní stránce */
+    max-width: 320px;  /* Zvětšená fotka na hlavní stránce */
     height: auto;      
     display: block;    
     border: none;      
