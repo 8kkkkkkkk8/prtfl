@@ -1,4 +1,4 @@
-/* --- Základní nastavení stránky (zamčené scrollování + modrá mřížka) --- */
+/* --- Základní nastavení stránky (výraznější mřížka + zamykání scrollování) --- */
 html, body {
     width: 100%;
     height: 100vh;
@@ -6,11 +6,11 @@ html, body {
     padding: 0;
     background-color: #ffffff; /* Čistě bílý základ */
     
-    /* Jemná mřížka v odstínu modré (používáme RGBA pro jemnou průhlednost, aby nebyla moc křiklavá) */
+    /* Výraznější mřížka v odstínu modré (zvedli jsme průhlednost na 0.22, ať je víc vidět) */
     background-image: 
-        linear-gradient(to right, rgba(0, 0, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 0, 255, 0.08) 1px, transparent 1px);
-    background-size: 40px 40px; /* Velikost čtverců mřížky */
+        linear-gradient(to right, rgba(0, 0, 255, 0.22) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 255, 0.22) 1px, transparent 1px);
+    background-size: 40px 40px; 
     
     color: #000000; /* Černý text */
     font-family: "Times New Roman", Times, serif;
@@ -23,13 +23,10 @@ html, body {
     align-items: center;
 }
 
-/* --- Bílý obrys (outline) pro všechen text na stránce --- */
+/* --- Čistý bílý obrys (outline) pouze pro písmo, ne pro přeškrtnutí --- */
 body, h1, a, li {
-    text-shadow: 
-        -1px -1px 0 #ffffff,  
-         1px -1px 0 #ffffff, 
-        -1px  1px 0 #ffffff,  
-         1px  1px 0 #ffffff; /* Vytvoří 1px bílý obrys kolem každého textu */
+    -webkit-text-stroke: 1px #ffffff; /* Vytvoří 1px bílý obrys kolem písmen */
+    paint-order: stroke fill;          /* Zajistí správné vykreslení obrysu pod textem */
 }
 
 /* Odkazy (hyperlinky) */
@@ -42,7 +39,7 @@ a {
 a:hover {
     color: #0000ff; 
     text-decoration: line-through; /* Přeškrtnutí */
-    text-decoration-color: #ff00ff; /* Magenta */
+    text-decoration-color: #ff00ff; /* Magenta přeškrtnutí bez bílého obrysu */
 }
 
 /* Odstranění odrážek v menu */
