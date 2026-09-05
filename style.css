@@ -29,17 +29,15 @@ nav ul {
     margin: 0;
 }
 
-/* --- Z kompaktněné Trojúhelníkové Grid Mřížky --- */
+/* --- Trojúhelníková Grid Mřížka --- */
 
 .triangle-grid {
     display: grid;
-    grid-template-columns: auto auto auto; /* Sloupce se přizpůsobí obsahu */
-    grid-template-rows: auto auto; /* Jen dva hlavní řádkové bloky nahoru/dolů */
-    
-    /* Vycentrování a stažení k sobě */
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
     width: fit-content;
-    margin: 25vh auto 0 auto; /* Odsazení shora, zbytek auto na střed */
-    gap: 60px 100px; /* První číslo je mezera svisle, druhé vodorovně mezi sloupci */
+    margin: 25vh auto 0 auto;
+    gap: 60px 100px;
 }
 
 /* Společné vlastnosti pro všechny sekce */
@@ -55,14 +53,15 @@ nav ul {
 /* 1. Nadpis (header) - nahoře uprostřed */
 .header {
     grid-row: 1;
-    grid-column: 1 / span 3; /* Roztáhne se přes všechny 3 sloupce, aby byl dokonale uprostřed */
+    grid-column: 1 / span 3;
     justify-content: center;
 }
 
 .header h1 {
-    font-size: 2.2em; /* Mírně menší a elegantnější nadpis */
+    font-size: 2.2em;
     margin: 0;
     letter-spacing: 2px;
+    color: #0000ff; /* Změněno na stejnou modrou barvu jako hyperlink */
 }
 
 
@@ -85,7 +84,7 @@ nav ul {
     justify-content: flex-end;
 }
 
-/* Placeholder pro fotku (můžete zmenšit podle libosti) */
+/* Placeholder pro fotku */
 .photo-placeholder {
     width: 120px;  
     height: 120px; 
