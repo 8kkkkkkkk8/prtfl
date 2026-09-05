@@ -250,7 +250,13 @@ body {
 /* Fotka v biu */
 .bio-photo {
     width: 100%;
-    max-width: 200px; /* Můžeš si upravit velikost fotky podle chuti */
+    max-width: 320px; /* Můžeš si upravit velikost fotky podle chuti */
     height: auto;
     display: block;
+}
+
+/* Zmenšení textu v biu */
+.bio-text p {
+    font-size: 0.9em; /* Můžeš zkusit i menší, např. 0.85em */
+    line-height: 1.5;
 }
