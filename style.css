@@ -178,3 +178,20 @@ body.scrollable-page {
     min-height: 100vh;
     display: block !important; /* Zruší flexbox vycentrování celého těla, aby stránka mohla růst dolů */
 }
+
+/* --- Oprava pro obrysy a styly na podstránkách --- */
+.subpage-header h1, .subpage-menu a {
+    -webkit-text-stroke: 1.75px #ffffff;
+    paint-order: stroke fill;
+}
+
+.subpage-menu a {
+    color: #0000ff;
+    text-decoration: none;
+}
+
+.subpage-menu a:hover {
+    color: #0000ff;
+    text-decoration: line-through;
+    text-decoration-color: #ff00ff;
+}
