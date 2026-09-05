@@ -3,7 +3,7 @@
    ================================================---------- */
 html, body {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     background-color: #ffffff;
@@ -17,19 +17,7 @@ html, body {
     color: #000000;
     font-family: "Times New Roman", Times, serif;
     font-size: 18px;
-    overflow: hidden; /* Zamčené scrollování pro hlavní stránku */
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Povolení scrollování pro portfolio (přepíná se pomocí class="scrollable-page" v HTML) */
-body.scrollable-page {
-    overflow: auto !important;
-    height: auto !important;
-    min-height: 100vh;
-    display: block !important;
+    overflow: auto; /* Výchozí scrollování zapnuté (pro portfolio) */
 }
 
 
@@ -66,23 +54,28 @@ nav ul, .subpage-menu ul {
 
 
 /* ==========================================================
-   3. HLAVNÍ STRÁNKA (Triangle Grid layout)
+   3. HLAVNÍ STRÁNKA (Pevná na 1 obrazovku, vycentrovaná)
    ================================================---------- */
+body.home-page {
+    overflow: hidden !important;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .triangle-grid {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto;
-    
     width: 100%;
     max-width: 650px; 
     gap: 60px 140px; 
-    
     box-sizing: border-box;
     padding: 20px;
     align-items: center; 
 }
 
-/* Nadpis na hlavní stránce */
 .header {
     grid-row: 1;
     grid-column: 1 / span 3;
@@ -97,7 +90,6 @@ nav ul, .subpage-menu ul {
     text-align: center;
 }
 
-/* Menu na hlavní stránce (dole vlevo) */
 .menu {
     grid-row: 2;
     grid-column: 1;
@@ -117,7 +109,6 @@ nav ul, .subpage-menu ul {
     margin-bottom: 0; 
 }
 
-/* Fotka na hlavní stránce (dole vpravo) */
 .photo {
     grid-row: 2;
     grid-column: 3;
@@ -137,7 +128,7 @@ nav ul, .subpage-menu ul {
 
 
 /* ==========================================================
-   4. PODSTRÁNKY (bio, contact, portfolio)
+   4. PODSTRÁNKY - PORTFOLIO (Scrollovací, začíná nahoře)
    ================================================---------- */
 .subpage-container {
     width: 100%;
@@ -150,7 +141,6 @@ nav ul, .subpage-menu ul {
     align-items: center;
 }
 
-/* Nadpis na podstránkách */
 .subpage-header {
     margin-bottom: 30px;
     text-align: center;
@@ -162,7 +152,6 @@ nav ul, .subpage-menu ul {
     letter-spacing: 2px;
 }
 
-/* Menu pod nadpisem na podstránkách (vedle sebe) */
 .subpage-menu {
     margin-bottom: 50px;
 }
@@ -173,8 +162,45 @@ nav ul, .subpage-menu ul {
     justify-content: center;
 }
 
-/* Obsahová část podstránek */
 .subpage-content {
     width: 100%;
     text-align: center;
+}
+
+
+/* ==========================================================
+   5. PODSTRÁNKY - BIO & CONTACT (Zamčené na 1 obrazovku, obsah uprostřed)
+   ================================================---------- */
+body.locked-page {
+    overflow: hidden !important;
+    height: 100vh;
+}
+
+.locked-container {
+    width: 100%;
+    max-width: 650px;
+    height: 100vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    /* Nadpis a menu zůstanou nahoře, ale obsah uvnitř se vycentruje dolů do středu */
+    justify-content: space-between; 
+    align-items: center;
+}
+
+/* Horní část (nadpis + menu) pro bio/contact */
+.locked-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Střední obsahová část pro bio/contact - dokonale uprostřed obrazovky */
+.locked-content {
+    width: 100%;
+    text-align: center;
+    margin: auto 0; /* Vytlačí text přesně do svislého středu mezi menu a spodok obrazovky */
 }
