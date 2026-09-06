@@ -290,7 +290,7 @@ body {
 /* Speciální nastavení pro video (nebo celkově videa v galerii) */
 .project-gallery video {
     width: 100%;
-    max-width: 500px; /* Video u SLTWRLD může být větší, ať vynikne */
+    max-width: 550px; /* Video u SLTWRLD může být větší, ať vynikne */
     height: auto;
     display: block;
     margin: 0 auto;
