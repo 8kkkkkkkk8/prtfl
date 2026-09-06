@@ -318,3 +318,8 @@ body {
     object-fit: contain;
     display: block;
 }
+
+/* --- Doplnění pro Lightbox klikání --- */
+.project-gallery img {
+    cursor: pointer;
+}
