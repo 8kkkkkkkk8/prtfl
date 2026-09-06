@@ -42,7 +42,7 @@
                     </div>
                 </div>
 
-               <!-- Galerie obrázků (interaktivní lightbox) -->
+                <!-- Galerie obrázků (interaktivní lightbox) -->
                 <div class="project-gallery">
                     <img src="img/projekt1-1.png" alt="Hladce obrace - vizuál výstavy 1">
                     <img src="img/projekt1-2.png" alt="Hladce obrace - vizuál výstavy 2">
@@ -56,7 +56,7 @@
 
     </div>
 
-    <!-- Lightbox okno (skryté, dokud se na něco neklikne) -->
+    <!-- Lightbox okno (skryté, dokud se na fotku neklepne) -->
     <div id="lightbox" class="lightbox-modal">
         <img id="lightbox-img" src="" alt="Zvětšený obrázek">
     </div>
@@ -68,18 +68,17 @@
         const galleryImages = document.querySelectorAll('.project-gallery img');
 
         galleryImages.forEach(img => {
-            img.style.cursor = 'pointer'; // Změní kurzor na „ručičku“, aby bylo vidět, že je to klikací
+            img.style.cursor = 'pointer';
             img.addEventListener('click', () => {
                 lightboxImg.src = img.src;
                 lightbox.style.display = 'flex';
             });
         });
 
-        // Kliknutím kamkoliv na modal (nebo na obrázek) se to zase zavře
         lightbox.addEventListener('click', () => {
             lightbox.style.display = 'none';
         });
     </script>
-    
+
 </body>
 </html>
