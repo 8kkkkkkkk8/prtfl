@@ -271,23 +271,41 @@ body {
     margin: 0;
 }
 
-/* Galerie obrázků – změněno na 3 sloupce vedle sebe */
-.project-gallery {
+/* --- GALERIE VARIANTY --- */
+
+/* 1. Varianta 2x2 (2 sloupce vedle sebe - ideální pro 4 obrázky u Projektu 1) */
+.project-gallery.gallery-2x2 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* <--- Tady jsou teď 3 sloupce */
-    gap: 15px; /* Trochu menší mezera, aby se to v 700px šířce hezky poskládalo */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
-.project-gallery img {
+.project-gallery.gallery-2x2 img {
     width: 100%;
-    max-width: 100%; /* Přizpůsobí se danému sloupci v mřížce */
+    max-width: 320px; /* Zase hezky velké obrázky */
     height: auto;
     display: block;
     margin: 0 auto;
     cursor: pointer;
 }
 
-/* Speciální nastavení pro video (zůstává přes celou šířku kontejneru) */
+/* 2. Varianta 3 sloupce (ideální pro Projekt 5 - Tiskoviny) */
+.project-gallery.gallery-3cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.project-gallery.gallery-3cols img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+/* Speciální nastavení pro video (zůstává přes celou šířku) */
 .project-gallery video {
     width: 100%;
     max-width: 500px;
