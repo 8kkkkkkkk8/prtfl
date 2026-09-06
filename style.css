@@ -271,31 +271,31 @@ body {
     margin: 0;
 }
 
-/* Původní mřížka pro obrázky (zase hezky velké 320px) */
+/* Galerie obrázků – změněno na 3 sloupce vedle sebe */
 .project-gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* <--- Tady jsou teď 3 sloupce */
+    gap: 15px; /* Trochu menší mezera, aby se to v 700px šířce hezky poskládalo */
 }
 
 .project-gallery img {
     width: 100%;
-    max-width: 320px; /* Vracíme velký rozměr pro obrázky prvního projektu */
+    max-width: 100%; /* Přizpůsobí se danému sloupci v mřížce */
     height: auto;
     display: block;
     margin: 0 auto;
     cursor: pointer;
 }
 
-/* Speciální nastavení pro video (nebo celkově videa v galerii) */
+/* Speciální nastavení pro video (zůstává přes celou šířku kontejneru) */
 .project-gallery video {
     width: 100%;
-    max-width: 650px; /* Video u SLTWRLD může být větší, ať vynikne */
+    max-width: 500px;
     height: auto;
     display: block;
     margin: 0 auto;
     cursor: pointer;
-    grid-column: 1 / -1; /* Roztáhne video přes oba sloupce mřížky, takže bude hezky uprostřed a velké */
+    grid-column: 1 / -1; 
 }
 
 /* --- Lightbox pro zvětšení obrázku/videa --- */
