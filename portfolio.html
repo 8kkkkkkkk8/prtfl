@@ -42,12 +42,12 @@
                     </div>
                 </div>
 
-                <!-- Galerie obrázků (zmenšené, vedle sebe, po kliknutí se otevřou v plné velikosti) -->
+               <!-- Galerie obrázků (interaktivní lightbox) -->
                 <div class="project-gallery">
-                    <a href="img/projekt1-1.png" target="_blank"><img src="img/projekt1-1.png" alt="Hladce obrace - vizuál výstavy 1"></a>
-                    <a href="img/projekt1-2.png" target="_blank"><img src="img/projekt1-2.png" alt="Hladce obrace - vizuál výstavy 2"></a>
-                    <a href="img/projekt1-3.png" target="_blank"><img src="img/projekt1-3.png" alt="Hladce obrace - vizuál výstavy 3"></a>
-                    <a href="img/projekt1-4.png" target="_blank"><img src="img/projekt1-4.png" alt="Hladce obrace - vizuál výstavy 4"></a>
+                    <img src="img/projekt1-1.png" alt="Hladce obrace - vizuál výstavy 1">
+                    <img src="img/projekt1-2.png" alt="Hladce obrace - vizuál výstavy 2">
+                    <img src="img/projekt1-3.png" alt="Hladce obrace - vizuál výstavy 3">
+                    <img src="img/projekt1-4.png" alt="Hladce obrace - vizuál výstavy 4">
                 </div>
 
             </div>
@@ -56,5 +56,30 @@
 
     </div>
 
+    <!-- Lightbox okno (skryté, dokud se na něco neklikne) -->
+    <div id="lightbox" class="lightbox-modal">
+        <img id="lightbox-img" src="" alt="Zvětšený obrázek">
+    </div>
+
+    <!-- JavaScript pro ovládání lightboxu -->
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const galleryImages = document.querySelectorAll('.project-gallery img');
+
+        galleryImages.forEach(img => {
+            img.style.cursor = 'pointer'; // Změní kurzor na „ručičku“, aby bylo vidět, že je to klikací
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+            });
+        });
+
+        // Kliknutím kamkoliv na modal (nebo na obrázek) se to zase zavře
+        lightbox.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+    </script>
+    
 </body>
 </html>
