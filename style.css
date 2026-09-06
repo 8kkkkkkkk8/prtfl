@@ -237,3 +237,53 @@ body {
     font-size: 1.2em;
     letter-spacing: 1px;
 }
+
+/* --- Styly pro sekci Portfolio --- */
+
+.portfolio-project {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 80px;
+    text-align: left;
+}
+
+/* Řádek s názvem a popisem vedle sebe */
+.project-header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 30px;
+}
+
+.project-title a {
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.project-description p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Galerie obrázků vedle sebe (mřížka) */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 obrázky vedle sebe */
+    gap: 20px; /* Mezery mezi obrázky */
+}
+
+/* Odkaz a obrázek v galerii (zmenšení a možnost rozkliknutí) */
+.project-gallery a {
+    display: block;
+}
+
+.project-gallery img {
+    width: 100%;
+    max-width: 380px; /* Zmenšení maximální šířky obrázku */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
