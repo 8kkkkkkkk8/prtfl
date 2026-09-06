@@ -1,160 +1,340 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8kkkkkkkk8 - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* ==========================================================
+   1. ZÁKLADNÍ NASTAVENÍ A POZADÍ
+   ================================================---------- */
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    
+    /* Modrá mřížka na pozadí - nastavená jako statická (fixed) */
+    background-image: 
+        linear-gradient(to right, rgba(0, 0, 255, 0.22) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 255, 0.22) 1px, transparent 1px);
+    background-size: 40px 40px; 
+    background-attachment: fixed; /* <--- Mřížka zůstává pevně na místě při scrollování */
+    
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    overflow: auto;
+}
 
-    <div class="subpage-container">
-        
-        <!-- Nahoře nadpis -->
-        <header class="subpage-header">
-            <h1><a href="index.html">8kkkkkkkk8  //  portfolio</a></h1>
-        </header>
 
-        <!-- Menu pod nadpisem -->
-        <nav class="subpage-menu">
-            <ul>
-                <li><a href="bio.html">bio</a></li>
-                <li><a href="portfolio.html">portfolio</a></li>
-                <li><a href="contact.html">contact</a></li>
-            </ul>
-        </nav>
+/* ==========================================================
+   2. TYPOGRAFIE, OBRYSY A ODKAZY (globální styly)
+   ================================================---------- */
 
-        <!-- Obsah portfolia -->
-        <main class="subpage-content">
-            
-            <!-- Projekt 1: Hladce obrace (Grid 2x2) -->
-            <div class="portfolio-project">
-                <div class="project-header-grid">
-                    <div class="project-title">
-                        <a href="https://fud.ujep.cz/vystavy/vernisaz-vystavy-hladce-obrace-od-sebe-sama-kolem-prazdna-a-skrze-nej/" target="_blank" rel="noopener noreferrer">
-                            HLADCE OBRACE: OD SEBE SAMA, KOLEM PRÁZDNA A SKRZE NĚJ
-                        </a>
-                    </div>
-                    <div class="project-description">
-                        <p>celkový vizuál (cz a en) výstavy v Domě umění Ústí nad Labem; plakáty, social media (facebook bannery, instagram příspěvky, instagram stories), příloha do článků, letáky, mapa výstavy, ekomail, etc</p>
-                    </div>
-                </div>
+/* Bílý obrys (outline) pro všechna písmena na webu */
+body, h1, a, li, 
+.subpage-header h1, .subpage-menu a {
+    -webkit-text-stroke: 3px #ffffff;
+    paint-order: stroke fill;
+}
 
-                <div class="project-gallery gallery-2x2">
-                    <img src="img/projekt1-1.png" alt="Hladce obrace - vizuál výstavy 1">
-                    <img src="img/projekt1-2.png" alt="Hladce obrace - vizuál výstavy 2">
-                    <img src="img/projekt1-3.png" alt="Hladce obrace - vizuál výstavy 3">
-                    <img src="img/projekt1-4.png" alt="Hladce obrace - vizuál výstavy 4">
-                </div>
-            </div>
+/* Všechny odkazy na webu (modrá barva) */
+a {
+    color: #0000ff;
+    text-decoration: none; 
+}
 
-            <!-- Projekt 2: SLTWRLD -->
-            <div class="portfolio-project">
-                <div class="project-header-grid">
-                    <div class="project-title">
-                        <a href="https://sltwrld.eu" target="_blank" rel="noopener noreferrer">
-                            SLTWRLD
-                        </a>
-                    </div>
-                    <div class="project-description">
-                        <p>kompletní vizuální identita a webové stránky indie značky SLTWRLD</p>
-                    </div>
-                </div>
+/* Efekt při najetí myši na odkaz (růžové přeškrtnutí) */
+a:hover {
+    color: #0000ff;
+    text-decoration: line-through;
+    text-decoration-color: #ff00ff;
+}
 
-                <div class="project-gallery">
-                    <video src="img/projekt2.mp4" autoplay loop muted playsinline></video>
-                </div>
-            </div>
+/* Čistění seznamů v menu */
+nav ul, .subpage-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
-            <!-- Projekt 3: FITAMIN -->
-            <div class="portfolio-project">
-                <div class="project-header-grid">
-                    <div class="project-title">
-                        <a href="portfolio.html">
-                            FITAMIN
-                        </a>
-                    </div>
-                    <div class="project-description">
-                        <p>koncept brandu a značky „FITAMIN,“ specializující se na zdravou a sportovní výživu; logotyp a label produktů</p>
-                    </div>
-                </div>
 
-                <div class="project-gallery">
-                    <video src="img/projekt2.mp4" autoplay loop muted playsinline></video>
-                </div>
-            </div>
+/* ==========================================================
+   3. HLAVNÍ STRÁNKA
+   ================================================---------- */
+body.home-page {
+    overflow: hidden !important;
+    height: 100vh;
+}
 
-            <!-- Projekt 4: HLADCE OBRACE EBOOK -->
-            <div class="portfolio-project">
-                <div class="project-header-grid">
-                    <div class="project-title">
-                        <a href="https://fud.ujep.cz/edice-fud/hladce-obrace-od-sebe-sama-kolem-prazdna-a-skrze-nej/" target="_blank" rel="noopener noreferrer">
-                            HLADCE OBRACE: OD SEBE SAMA, KOLEM PRÁZDNA A SKRZE NĚJ EBOOK
-                        </a>
-                    </div>
-                    <div class="project-description">
-                        <p>ebook, katalog výstavy Domu umění v Ústí nad Labem; sazba knihy; 60 stran (v cz a en)</p>
-                    </div>
-                </div>
+.home-container {
+    width: 100%;
+    max-width: 750px;
+    height: 100vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+}
 
-                <div class="project-gallery">
-                    <video src="img/projekt2.mp4" autoplay loop muted playsinline></video>
-                </div>
-            </div>
+.home-content-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 100px;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin: auto 0;
+}
 
-            <!-- Projekt 5: TISKOVINY (Grid po 3 v řadě) -->
-            <div class="portfolio-project">
-                <div class="project-header-grid">
-                    <div class="project-title">
-                        <a href="portfolio.html">
-                            TISKOVINY
-                        </a>
-                    </div>
-                    <div class="project-description">
-                        <p>sbírka tiskovin, plakátů a printů</p>
-                    </div>
-                </div>
+.home-menu ul {
+    text-align: left;
+}
 
-                <div class="project-gallery gallery-3cols">
-                    <img src="img/projekt5-1.png" alt="Tiskoviny 1">
-                    <img src="img/projekt5-2.png" alt="Tiskoviny 2">
-                    <img src="img/projekt5-3.png" alt="Tiskoviny 3">
-                    <img src="img/projekt5-4.png" alt="Tiskoviny 4">
-                    <img src="img/projekt5-5.png" alt="Tiskoviny 5">
-                    <img src="img/projekt5-6.png" alt="Tiskoviny 6">
-                    <img src="img/projekt5-7.png" alt="Tiskoviny 7">
-                </div>
-            </div>
+.home-menu li {
+    margin-bottom: 8px; 
+}
+.home-menu li:last-child {
+    margin-bottom: 0; 
+}
 
-        </main>
+.moje-fotka {
+    width: 100%;        
+    max-width: 320px;  
+    height: auto;      
+    display: block;    
+    border: none;      
+    background: none;  
+}
 
-    </div>
 
-    <!-- Lightbox okno (skryté, dokud se na prvek neklepne) -->
-    <div id="lightbox" class="lightbox-modal">
-        <img id="lightbox-img" src="" alt="Zvětšený prvek">
-    </div>
+/* ==========================================================
+   4. PODSTRÁNKY - PORTFOLIO (Nastaveno na 700px)
+   ================================================---------- */
+.subpage-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    <!-- JavaScript pro ovládání lightboxu (funguje pro fotky i videa) -->
-    <script>
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        
-        // Vybere obrázky i videa v galeriích
-        const galleryItems = document.querySelectorAll('.project-gallery img, .project-gallery video');
+.subpage-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
 
-        galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
-                // Pokud je to video, vezme jeho zdroj, jinak zdroj obrázku
-                lightboxImg.src = item.src || item.currentSrc;
-                lightbox.style.display = 'flex';
-            });
-        });
+.subpage-header h1 {
+    font-size: 2.2em;
+    margin: 0;
+    letter-spacing: 2px;
+}
 
-        lightbox.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-        });
-    </script>
+.subpage-menu {
+    margin-bottom: 50px;
+}
 
-</body>
-</html>
+.subpage-menu ul {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.subpage-content {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* ==========================================================
+   5. PODSTRÁNKY - BIO & CONTACT
+   ================================================---------- */
+body.locked-page {
+    overflow: hidden !important;
+    height: 100vh;
+}
+
+.locked-container {
+    width: 100%;
+    max-width: 650px;
+    height: 100vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.locked-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.locked-content {
+    width: 100%;
+    text-align: center;
+    margin: auto 0;
+}
+
+
+/* ==========================================================
+   6. SPECIFICKÉ KOMPONENTY
+   ================================================---------- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+body {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.bio-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+    max-width: 750px;
+    text-align: left;
+}
+
+.bio-text h2 {
+    font-size: 1.2em;
+    font-weight: normal;
+    margin: 0 0 20px 0;
+    letter-spacing: 1px;
+}
+
+.bio-text p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.bio-photo {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-link {
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+/* --- Styly pro sekci Portfolio --- */
+.portfolio-project {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 80px;
+    text-align: left;
+}
+
+.project-header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 40px;
+}
+
+.project-title {
+    text-align: left;
+}
+
+.project-title a {
+    font-size: 1.15em;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.project-description {
+    text-align: right;
+}
+
+.project-description p {
+    font-size: 0.85em;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- GALERIE VARIANTY --- */
+
+/* 1. Varianta 2x2 (2 sloupce vedle sebe - ideální pro 4 obrázky u Projektu 1) */
+.project-gallery.gallery-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-gallery.gallery-2x2 img {
+    width: 100%;
+    max-width: 320px; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+/* 2. Varianta 3 sloupce (ideální pro Projekt 5 - Tiskoviny) */
+.project-gallery.gallery-3cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.project-gallery.gallery-3cols img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+/* Speciální nastavení pro video (zůstává přes celou šířku) */
+.project-gallery video {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    grid-column: 1 / -1; 
+}
+
+/* --- Lightbox pro zvětšení obrázku/videa --- */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lightbox-modal img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    display: block;
+}
