@@ -106,11 +106,11 @@ body.home-page {
 
 
 /* ==========================================================
-   4. PODSTRÁNKY - PORTFOLIO (Nastaveno na 600px)
+   4. PODSTRÁNKY - PORTFOLIO (Nastaveno na 700px)
    ================================================---------- */
 .subpage-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     box-sizing: border-box;
     padding: 40px 20px;
@@ -235,10 +235,10 @@ body {
     letter-spacing: 1px;
 }
 
-/* --- Styly pro sekci Portfolio (600px šířka) --- */
+/* --- Styly pro sekci Portfolio (Větší miniatury) --- */
 .portfolio-project {
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     margin-bottom: 80px;
     text-align: left;
 }
@@ -246,7 +246,7 @@ body {
 .project-header-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    gap: 40px;
     align-items: start;
     margin-bottom: 40px;
 }
@@ -271,23 +271,23 @@ body {
     margin: 0;
 }
 
-/* Galerie obrázků vedle sebe */
+/* Galerie obrázků - větší miniatury vedle sebe */
 .project-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 20px;
 }
 
 .project-gallery img {
     width: 100%;
-    max-width: 280px; /* Upraveno pro 600px kontejner */
+    max-width: 320px; /* Větší náhledové miniatury */
     height: auto;
     display: block;
     margin: 0 auto;
     cursor: pointer;
 }
 
-/* --- Lightbox --- */
+/* --- Lightbox pro zvětšení obrázku --- */
 .lightbox-modal {
     display: none;
     position: fixed;
