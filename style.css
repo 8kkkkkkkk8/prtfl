@@ -25,7 +25,7 @@ html, body {
    2. TYPOGRAFIE, OBRYSY A ODKAZY (globální styly)
    ================================================---------- */
 
-/* Bílý obrys (outline) pro všechna písmena na webu – zvětšeno na 3px */
+/* Bílý obrys (outline) pro všechna písmena na webu */
 body, h1, a, li, 
 .subpage-header h1, .subpage-menu a {
     -webkit-text-stroke: 3px #ffffff;
@@ -38,7 +38,7 @@ a {
     text-decoration: none; 
 }
 
-/* Efekt při najetí myši na jakýkoliv odkaz (růžové přeškrtnutí) */
+/* Efekt při najetí myši na odkaz (růžové přeškrtnutí) */
 a:hover {
     color: #0000ff;
     text-decoration: line-through;
@@ -54,7 +54,7 @@ nav ul, .subpage-menu ul {
 
 
 /* ==========================================================
-   3. HLAVNÍ STRÁNKA (Nadpis nahoře jako všude jinde)
+   3. HLAVNÍ STRÁNKA
    ================================================---------- */
 body.home-page {
     overflow: hidden !important;
@@ -96,7 +96,7 @@ body.home-page {
 }
 
 .moje-fotka {
-    width: 100%;       
+    width: 100%;        
     max-width: 320px;  
     height: auto;      
     display: block;    
@@ -104,12 +104,13 @@ body.home-page {
     background: none;  
 }
 
+
 /* ==========================================================
-   4. PODSTRÁNKY - PORTFOLIO (Scrollovací, začíná nahoře)
+   4. PODSTRÁNKY - PORTFOLIO (Nastaveno na 600px)
    ================================================---------- */
 .subpage-container {
     width: 100%;
-    max-width: 650px;
+    max-width: 600px;
     margin: 0 auto;
     box-sizing: border-box;
     padding: 40px 20px;
@@ -146,7 +147,7 @@ body.home-page {
 
 
 /* ==========================================================
-   5. PODSTRÁNKY - BIO & CONTACT (Zamčené na 1 obrazovku)
+   5. PODSTRÁNKY - BIO & CONTACT
    ================================================---------- */
 body.locked-page {
     overflow: hidden !important;
@@ -181,10 +182,8 @@ body.locked-page {
 
 
 /* ==========================================================
-   6. SPECIFICKÉ KOMPONENTY (Bio, Contact, Animace)
+   6. SPECIFICKÉ KOMPONENTY
    ================================================---------- */
-
-/* Plynulý přechod (fade-in) při načtení stránky */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -194,7 +193,6 @@ body {
     animation: fadeIn 0.4s ease-in-out;
 }
 
-/* Dvousloupcové Bio */
 .bio-grid {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -225,7 +223,6 @@ body {
     display: block;
 }
 
-/* Kontaktní stránka */
 .contact-content {
     display: flex;
     flex-direction: column;
@@ -238,75 +235,68 @@ body {
     letter-spacing: 1px;
 }
 
-/* --- Styly pro sekci Portfolio --- */
-
+/* --- Styly pro sekci Portfolio (600px šířka) --- */
 .portfolio-project {
     width: 100%;
-    max-width: 850px; /* Mírně rozšířeno pro lepší rozvržení textů */
+    max-width: 600px;
     margin-bottom: 80px;
     text-align: left;
 }
 
-/* Řádek s názvem (vlevo) a popisem (vpravo) */
 .project-header-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dva rovnocenné sloupce */
-    gap: 50px;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
     align-items: start;
     margin-bottom: 40px;
 }
 
-/* Název projektu - zarovnaný vlevo, výraznější / bold */
 .project-title {
     text-align: left;
 }
 
 .project-title a {
-    font-size: 1.25em;
+    font-size: 1.15em;
     letter-spacing: 1px;
-    font-weight: 700; /* Větší tučnost */
+    font-weight: 700;
 }
 
-/* Popis projektu - zarovnaný vpravo */
 .project-description {
     text-align: right;
 }
 
 .project-description p {
-    font-size: 0.9em;
+    font-size: 0.85em;
     line-height: 1.5;
     margin: 0;
 }
 
-/* Galerie obrázků vedle sebe (mřížka 2x2) */
+/* Galerie obrázků vedle sebe */
 .project-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.project-gallery a {
-    display: block;
+    gap: 15px;
 }
 
 .project-gallery img {
     width: 100%;
-    max-width: 520px;
+    max-width: 280px; /* Upraveno pro 600px kontejner */
     height: auto;
     display: block;
     margin: 0 auto;
+    cursor: pointer;
 }
 
-/* --- Lightbox pro zvětšení obrázku --- */
+/* --- Lightbox --- */
 .lightbox-modal {
-    display: none; /* Ve výchozím stavu je skrytý */
+    display: none;
     position: fixed;
     z-index: 9999;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85); /* Tmavé průhledné pozadí */
+    background-color: rgba(0, 0, 0, 0.85);
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -317,9 +307,4 @@ body {
     max-height: 90vh;
     object-fit: contain;
     display: block;
-}
-
-/* --- Doplnění pro Lightbox klikání --- */
-.project-gallery img {
-    cursor: pointer;
 }
