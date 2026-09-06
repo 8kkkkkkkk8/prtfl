@@ -27,10 +27,8 @@
         <!-- Obsah portfolia -->
         <main class="subpage-content">
             
-            <!-- Projekt: Hladce obrace -->
+            <!-- Projekt 1: Hladce obrace -->
             <div class="portfolio-project">
-                
-                <!-- Horní část: Vlevo název s odkazem, vpravo popisek -->
                 <div class="project-header-grid">
                     <div class="project-title">
                         <a href="https://fud.ujep.cz/vystavy/vernisaz-vystavy-hladce-obrace-od-sebe-sama-kolem-prazdna-a-skrze-nej/" target="_blank" rel="noopener noreferrer">
@@ -42,34 +40,55 @@
                     </div>
                 </div>
 
-                <!-- Galerie obrázků (interaktivní lightbox) -->
                 <div class="project-gallery">
                     <img src="img/projekt1-1.png" alt="Hladce obrace - vizuál výstavy 1">
                     <img src="img/projekt1-2.png" alt="Hladce obrace - vizuál výstavy 2">
                     <img src="img/projekt1-3.png" alt="Hladce obrace - vizuál výstavy 3">
                     <img src="img/projekt1-4.png" alt="Hladce obrace - vizuál výstavy 4">
                 </div>
+            </div>
 
+            <!-- Projekt 2: SLTWRLD -->
+            <div class="portfolio-project">
+                <div class="project-header-grid">
+                    <div class="project-title">
+                        <a href="https://sltwrld.eu" target="_blank" rel="noopener noreferrer">
+                            SLTWRLD
+                        </a>
+                    </div>
+                    <div class="project-description">
+                        <p>kompletní vizuální identita a webové stránky indie značky SLTWRLD</p>
+                    </div>
+                </div>
+
+                <div class="project-gallery">
+                    <video src="img/projekt2.mp4" autoplay loop muted playsinline></video>
+                    <!-- Sem můžeš případně doplnit další obrázky k tomuto projektu, např: -->
+                    <!-- <img src="img/projekt2-1.png" alt="SLTWRLD 1"> -->
+                </div>
             </div>
 
         </main>
 
     </div>
 
-    <!-- Lightbox okno (skryté, dokud se na fotku neklepne) -->
+    <!-- Lightbox okno (skryté, dokud se na prvek neklepne) -->
     <div id="lightbox" class="lightbox-modal">
-        <img id="lightbox-img" src="" alt="Zvětšený obrázek">
+        <img id="lightbox-img" src="" alt="Zvětšený prvek">
     </div>
 
-    <!-- JavaScript pro ovládání lightboxu -->
+    <!-- JavaScript pro ovládání lightboxu (funguje pro fotky i videa) -->
     <script>
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
-        const galleryImages = document.querySelectorAll('.project-gallery img');
+        
+        // Vybere obrázky i videa v galeriích
+        const galleryItems = document.querySelectorAll('.project-gallery img, .project-gallery video');
 
-        galleryImages.forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Pokud je to video, vezme jeho zdroj, jinak zdroj obrázku
+                lightboxImg.src = item.src || item.currentSrc;
                 lightbox.style.display = 'flex';
             });
         });
