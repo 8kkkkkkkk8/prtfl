@@ -68,7 +68,6 @@
         const galleryImages = document.querySelectorAll('.project-gallery img');
 
         galleryImages.forEach(img => {
-            img.style.cursor = 'pointer';
             img.addEventListener('click', () => {
                 lightboxImg.src = img.src;
                 lightbox.style.display = 'flex';
