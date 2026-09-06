@@ -235,7 +235,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* --- Styly pro sekci Portfolio (Větší miniatury) --- */
+/* --- Styly pro sekci Portfolio (Zmenšeno a vycentrováno) --- */
 .portfolio-project {
     width: 100%;
     max-width: 700px;
@@ -271,23 +271,25 @@ body {
     margin: 0;
 }
 
-/* Galerie obrázků - větší miniatury vedle sebe */
+/* Galerie obrázků a videí - zmenšeno a pevně vycentrováno */
 .project-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
-.project-gallery img {
+.project-gallery img,
+.project-gallery video {
     width: 100%;
-    max-width: 320px; /* Větší náhledové miniatury */
+    max-width: 220px; /* Zmenšená šířka prvků */
     height: auto;
     display: block;
-    margin: 0 auto;
     cursor: pointer;
 }
 
-/* --- Lightbox pro zvětšení obrázku --- */
+/* --- Lightbox pro zvětšení obrázku/videa --- */
 .lightbox-modal {
     display: none;
     position: fixed;
