@@ -242,24 +242,34 @@ body {
 
 .portfolio-project {
     width: 100%;
-    max-width: 800px;
+    max-width: 850px; /* Mírně rozšířeno pro lepší rozvržení textů */
     margin-bottom: 80px;
     text-align: left;
 }
 
-/* Řádek s názvem a popisem vedle sebe */
+/* Řádek s názvem (vlevo) a popisem (vpravo) */
 .project-header-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr 1fr; /* Dva rovnocenné sloupce */
+    gap: 50px;
     align-items: start;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+/* Název projektu - zarovnaný vlevo, výraznější / bold */
+.project-title {
+    text-align: left;
 }
 
 .project-title a {
-    font-size: 1.2em;
+    font-size: 1.25em;
     letter-spacing: 1px;
-    font-weight: bold;
+    font-weight: 700; /* Větší tučnost */
+}
+
+/* Popis projektu - zarovnaný vpravo */
+.project-description {
+    text-align: right;
 }
 
 .project-description p {
@@ -268,21 +278,20 @@ body {
     margin: 0;
 }
 
-/* Galerie obrázků vedle sebe (mřížka) */
+/* Galerie obrázků vedle sebe (mřížka 2x2) */
 .project-gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 obrázky vedle sebe */
-    gap: 20px; /* Mezery mezi obrázky */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
-/* Odkaz a obrázek v galerii (zmenšení a možnost rozkliknutí) */
 .project-gallery a {
     display: block;
 }
 
 .project-gallery img {
     width: 100%;
-    max-width: 380px; /* Zmenšení maximální šířky obrázku */
+    max-width: 380px;
     height: auto;
     display: block;
     margin: 0 auto;
