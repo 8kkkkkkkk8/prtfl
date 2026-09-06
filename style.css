@@ -235,7 +235,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* --- Styly pro sekci Portfolio (Zmenšeno a vycentrováno) --- */
+/* --- Styly pro sekci Portfolio --- */
 .portfolio-project {
     width: 100%;
     max-width: 700px;
@@ -271,22 +271,31 @@ body {
     margin: 0;
 }
 
-/* Galerie obrázků a videí - zmenšeno a pevně vycentrováno */
+/* Původní mřížka pro obrázky (zase hezky velké 320px) */
 .project-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
-.project-gallery img,
-.project-gallery video {
+.project-gallery img {
     width: 100%;
-    max-width: 220px; /* Zmenšená šířka prvků */
+    max-width: 320px; /* Vracíme velký rozměr pro obrázky prvního projektu */
     height: auto;
     display: block;
+    margin: 0 auto;
     cursor: pointer;
+}
+
+/* Speciální nastavení pro video (nebo celkově videa v galerii) */
+.project-gallery video {
+    width: 100%;
+    max-width: 500px; /* Video u SLTWRLD může být větší, ať vynikne */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    grid-column: 1 / -1; /* Roztáhne video přes oba sloupce mřížky, takže bude hezky uprostřed a velké */
 }
 
 /* --- Lightbox pro zvětšení obrázku/videa --- */
