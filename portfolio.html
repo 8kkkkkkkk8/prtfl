@@ -66,7 +66,7 @@
                 </div>
             </div>
 
-            <!-- Projekt 3: FITAMIN -->
+            <!-- Projekt 3: FITAMIN (Koláž nahoře + 9 fotek v řadě vedle sebe) -->
             <div class="portfolio-project">
                 <div class="project-header-grid">
                     <div class="project-title">
@@ -79,8 +79,22 @@
                     </div>
                 </div>
 
+                <!-- Úvodní velká koláž -->
                 <div class="project-gallery">
-                    <video src="img/projekt2.mp4" autoplay loop muted playsinline></video>
+                    <img src="img/projekt3.png" alt="Fitamin - hlavní koláž">
+                </div>
+
+                <!-- 9 produktů v horizontálním pásu vedle sebe -->
+                <div class="project-gallery gallery-row">
+                    <img src="img/projekt3-1.png" alt="Fitamin produkt 1">
+                    <img src="img/projekt3-2.png" alt="Fitamin produkt 2">
+                    <img src="img/projekt3-3.png" alt="Fitamin produkt 3">
+                    <img src="img/projekt3-4.png" alt="Fitamin produkt 4">
+                    <img src="img/projekt3-5.png" alt="Fitamin produkt 5">
+                    <img src="img/projekt3-6.png" alt="Fitamin produkt 6">
+                    <img src="img/projekt3-7.png" alt="Fitamin produkt 7">
+                    <img src="img/projekt3-8.png" alt="Fitamin produkt 8">
+                    <img src="img/projekt3-9.png" alt="Fitamin produkt 9">
                 </div>
             </div>
 
@@ -135,17 +149,15 @@
         <img id="lightbox-img" src="" alt="Zvětšený prvek">
     </div>
 
-    <!-- JavaScript pro ovládání lightboxu (funguje pro fotky i videa) -->
+    <!-- JavaScript pro ovládání lightboxu -->
     <script>
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         
-        // Vybere obrázky i videa v galeriích
         const galleryItems = document.querySelectorAll('.project-gallery img, .project-gallery video');
 
         galleryItems.forEach(item => {
             item.addEventListener('click', () => {
-                // Pokud je to video, vezme jeho zdroj, jinak zdroj obrázku
                 lightboxImg.src = item.src || item.currentSrc;
                 lightbox.style.display = 'flex';
             });
