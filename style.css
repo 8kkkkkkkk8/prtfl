@@ -340,7 +340,7 @@ body {
 /* Speciální nastavení pro video (zůstává přes celou šířku) */
 .project-gallery video {
     width: 100%;
-    max-width: 500px;
+    max-width: 800px;
     height: auto;
     display: block;
     margin: 0 auto;
