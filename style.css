@@ -26,27 +26,23 @@ html, body {
    2. TYPOGRAFIE, OBRYSY A ODKAZY (globální styly)
    ================================================---------- */
 
-/* Bílý obrys (outline) pro všechna písmena na webu */
 body, h1, a, li, 
 .subpage-header h1, .subpage-menu a {
     -webkit-text-stroke: 3px #ffffff;
     paint-order: stroke fill;
 }
 
-/* Všechny odkazy na webu (modrá barva) */
 a {
     color: #0000ff;
     text-decoration: none; 
 }
 
-/* Efekt při najetí myši na odkaz (růžové přeškrtnutí) */
 a:hover {
     color: #0000ff;
     text-decoration: line-through;
     text-decoration-color: #ff00ff;
 }
 
-/* Čistění seznamů v menu */
 nav ul, .subpage-menu ul {
     list-style-type: none;
     padding: 0;
@@ -272,10 +268,10 @@ body {
     margin: 0;
 }
 
-/* Hlavní obrázek/koláž v projektu */
+/* Hlavní obrázek v projektu */
 .project-gallery img {
     width: 100%;
-    max-width: 650px;
+    max-width: 500px;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -284,7 +280,7 @@ body {
 
 /* --- GALERIE VARIANTY --- */
 
-/* 1. Varianta 2x2 (2 sloupce vedle sebe - Projekt 1) */
+/* 1. Varianta 2x2 (Projekt 1) */
 .project-gallery.gallery-2x2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -300,7 +296,7 @@ body {
     cursor: pointer;
 }
 
-/* 2. Varianta 3 sloupce (Projekt 5 - Tiskoviny) */
+/* 2. Varianta 3 sloupce (Projekt 5 a Ebooky) */
 .project-gallery.gallery-3cols {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -316,7 +312,7 @@ body {
     cursor: pointer;
 }
 
-/* 3. Varianta - Horizontální posuvný pás vedle sebe (Projekt 3) */
+/* 3. Horizontální pás (Projekt 3) */
 .project-gallery.gallery-row {
     display: flex;
     gap: 15px;
@@ -328,7 +324,7 @@ body {
 }
 
 .project-gallery.gallery-row img {
-    height: 150px;
+    height: 250px;
     width: auto;
     max-width: none;
     flex-shrink: 0;
@@ -337,10 +333,31 @@ body {
     cursor: pointer;
 }
 
-/* Speciální nastavení pro video (zůstává přes celou šířku) */
+/* 4. Dvousloupcový layout pro Projekt 4 (Ebook CZ: Vlevo video, vpravo mřížka) */
+.project-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr; 
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 40px; /* Mezera mezi českou a anglickou verzí */
+}
+
+.project-split-layout video {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+}
+
+/* 5. Zrcadlový dvousloupcový layout (Ebook EN: Vlevo mřížka, vpravo video) */
+.project-split-layout.mirrored {
+    grid-template-columns: 1.8fr 1fr; /* Mřížka širší, video užší */
+}
+
+/* Běžné video na šířku (Projekt 2) */
 .project-gallery video {
     width: 100%;
-    max-width: 800px;
+    max-width: 500px;
     height: auto;
     display: block;
     margin: 0 auto;
