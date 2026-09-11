@@ -66,7 +66,7 @@
                 </div>
             </div>
 
-            <!-- Projekt 3: FITAMIN (Koláž nahoře + 9 fotek v řadě vedle sebe) -->
+            <!-- Projekt 3: FITAMIN (Koláž nahoře + 9 fotek v řadě) -->
             <div class="portfolio-project">
                 <div class="project-header-grid">
                     <div class="project-title">
@@ -79,26 +79,24 @@
                     </div>
                 </div>
 
-                <!-- Úvodní velká koláž -->
                 <div class="project-gallery">
                     <img src="img/projekt3.png" alt="Fitamin - hlavní koláž">
                 </div>
 
-                <!-- 9 produktů v horizontálním pásu vedle sebe -->
                 <div class="project-gallery gallery-row">
-                    <img src="img/projekt3-3.png" alt="Fitamin produkt 1">
                     <img src="img/projekt3-1.png" alt="Fitamin produkt 1">
-                    <img src="img/projekt3-2.png" alt="Fitamin produkt 3">
-                    <img src="img/projekt3-5.png" alt="Fitamin produkt 4">
-                    <img src="img/projekt3-6.png" alt="Fitamin produkt 5">
-                    <img src="img/projekt3-4.png" alt="Fitamin produkt 6">
-                    <img src="img/projekt3-8.png" alt="Fitamin produkt 7">
-                    <img src="img/projekt3-9.png" alt="Fitamin produkt 8">
-                    <img src="img/projekt3-7.png" alt="Fitamin produkt 9">
+                    <img src="img/projekt3-2.png" alt="Fitamin produkt 2">
+                    <img src="img/projekt3-3.png" alt="Fitamin produkt 3">
+                    <img src="img/projekt3-4.png" alt="Fitamin produkt 4">
+                    <img src="img/projekt3-5.png" alt="Fitamin produkt 5">
+                    <img src="img/projekt3-6.png" alt="Fitamin produkt 6">
+                    <img src="img/projekt3-7.png" alt="Fitamin produkt 7">
+                    <img src="img/projekt3-8.png" alt="Fitamin produkt 8">
+                    <img src="img/projekt3-9.png" alt="Fitamin produkt 9">
                 </div>
             </div>
 
-            <!-- Projekt 4: HLADCE OBRACE EBOOK -->
+            <!-- Projekt 4: HLADCE OBRACE EBOOK (CZ + EN zrcadlově) -->
             <div class="portfolio-project">
                 <div class="project-header-grid">
                     <div class="project-title">
@@ -111,8 +109,38 @@
                     </div>
                 </div>
 
-                <div class="project-gallery">
-                    <video src="img/projekt2.mp4" autoplay loop muted playsinline></video>
+                <!-- ČESKÁ VERZE (Vlevo video projekt4-1.mp4, vpravo mřížka obrázků 1 až 9) -->
+                <div class="project-split-layout">
+                    <video src="img/projekt4-1.mp4" autoplay loop muted playsinline></video>
+
+                    <div class="project-gallery gallery-3cols" style="margin: 0;">
+                        <img src="img/projekt4-1.png" alt="Ebook CZ 1">
+                        <img src="img/projekt4-2.png" alt="Ebook CZ 2">
+                        <img src="img/projekt4-3.png" alt="Ebook CZ 3">
+                        <img src="img/projekt4-4.png" alt="Ebook CZ 4">
+                        <img src="img/projekt4-5.png" alt="Ebook CZ 5">
+                        <img src="img/projekt4-6.png" alt="Ebook CZ 6">
+                        <img src="img/projekt4-7.png" alt="Ebook CZ 7">
+                        <img src="img/projekt4-8.png" alt="Ebook CZ 8">
+                        <img src="img/projekt4-9.png" alt="Ebook CZ 9">
+                    </div>
+                </div>
+
+                <!-- ANGLICKÁ VERZE - ZRCADLOVĚ (Vlevo mřížka obrázků 10 až 18, vpravo video projekt4-2.mp4) -->
+                <div class="project-split-layout mirrored">
+                    <div class="project-gallery gallery-3cols" style="margin: 0;">
+                        <img src="img/projekt4-10.png" alt="Ebook EN 10">
+                        <img src="img/projekt4-11.png" alt="Ebook EN 11">
+                        <img src="img/projekt4-12.png" alt="Ebook EN 12">
+                        <img src="img/projekt4-13.png" alt="Ebook EN 13">
+                        <img src="img/projekt4-14.png" alt="Ebook EN 14">
+                        <img src="img/projekt4-15.png" alt="Ebook EN 15">
+                        <img src="img/projekt4-16.png" alt="Ebook EN 16">
+                        <img src="img/projekt4-17.png" alt="Ebook EN 17">
+                        <img src="img/projekt4-18.png" alt="Ebook EN 18">
+                    </div>
+
+                    <video src="img/projekt4-2.mp4" autoplay loop muted playsinline></video>
                 </div>
             </div>
 
@@ -144,7 +172,7 @@
 
     </div>
 
-    <!-- Lightbox okno (skryté, dokud se na prvek neklepne) -->
+    <!-- Lightbox okno -->
     <div id="lightbox" class="lightbox-modal">
         <img id="lightbox-img" src="" alt="Zvětšený prvek">
     </div>
@@ -154,7 +182,7 @@
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         
-        const galleryItems = document.querySelectorAll('.project-gallery img, .project-gallery video');
+        const galleryItems = document.querySelectorAll('.project-gallery img, .project-gallery video, .project-split-layout video');
 
         galleryItems.forEach(item => {
             item.addEventListener('click', () => {
